@@ -1,0 +1,213 @@
+/* —————————————————————————————— */
+/* 1. Global Reset & Variables */
+/* —————————————————————————————— */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+:root {
+  /* Light theme colors */
+  --bg: #f4f4f4;
+  --fg: #333;
+  --primary: #006699;
+  --secondary: #004466;
+}
+
+[data-theme="dark"] {
+  /* Dark theme overrides */
+  --bg: #121212;
+  --fg: #eee;
+}
+
+/* —————————————————————————————— */
+/* 2. Base Styles */
+/* —————————————————————————————— */
+body {
+  font-family: 'Segoe UI', sans-serif;
+  line-height: 1.6;
+  background: var(--bg);
+  color: var(--fg);
+  padding: 0 20px;
+}
+
+h2 {
+  color: var(--secondary);
+  border-bottom: 2px solid var(--primary);
+  margin-bottom: 15px;
+  padding-bottom: 5px;
+}
+
+ul {
+  list-style-type: square;
+  padding-left: 20px;
+}
+
+/* —————————————————————————————— */
+/* 3. Typography & Visual Flow */
+/* —————————————————————————————— */
+/* (if needed, add font-size rules here for h1, p, etc.) */
+
+/* —————————————————————————————— */
+/* 4. Header & Navigation */
+/* —————————————————————————————— */
+header {
+  text-align: center;
+  padding: 30px 0;
+  background-color: var(--primary);
+  color: white;
+}
+
+nav {
+  display: flex;
+  justify-content: center;
+  gap: 15px;
+  background-color: var(--secondary);
+  padding: 10px;
+}
+
+nav a {
+  color: white;
+  text-decoration: none;
+  font-weight: bold;
+  transition: opacity 0.2s;
+}
+
+nav a:hover {
+  opacity: 0.8;
+}
+
+/* —————————————————————————————— */
+/* 5. Hero Section */
+/* —————————————————————————————— */
+section#hero {
+  height: 100vh;
+  background: linear-gradient(135deg, var(--primary), var(--secondary));
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  color: white;
+}
+
+.hero-title {
+  font-size: 3rem;
+  margin-bottom: 1rem;
+  animation: fadeIn 1s ease-out;
+}
+
+.hero-text {
+  font-size: 1.2rem;
+}
+
+.cta-button {
+  display: inline-block;
+  padding: 10px 20px;
+  margin-top: 1rem;
+  background: white;
+  color: var(--primary);
+  text-decoration: none;
+  border-radius: 5px;
+  font-weight: bold;
+  transition: background 0.3s, color 0.3s;
+}
+
+.cta-button:hover {
+  background: var(--secondary);
+  color: white;
+}
+
+/* Fade-in animation */
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(20px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+/* —————————————————————————————— */
+/* 6. Main Content & Projects */
+/* —————————————————————————————— */
+main {
+  max-width: 800px;
+  margin: auto;
+  padding: 20px 0;
+}
+
+section {
+  margin-bottom: 40px;
+}
+
+.project {
+  background-color: white;
+  padding: 15px;
+  border-left: 5px solid var(--primary);
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+/* Grid layout for project listings or similar content */
+.projects-grid {
+  display: grid;
+  gap: 20px;
+  grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+}
+
+/* —————————————————————————————— */
+/* 7. Footer & Icons */
+/* —————————————————————————————— */
+footer {
+  text-align: center;
+  padding: 15px;
+  background-color: var(--primary);
+  color: white;
+  margin-top: 30px;
+}
+
+.gmail-icon,
+.linkedin-icon {
+  width: 20px;
+  height: 20px;
+}
+
+.linkedin-icon {
+  margin-right: 10px;
+}
+
+/* —————————————————————————————— */
+/* 8. Responsive Enhancements */
+/* —————————————————————————————— */
+@media (max-width: 768px) {
+  nav {
+    flex-direction: column;
+  }
+  
+  .hero-title {
+    font-size: 2.5rem;
+  }
+  
+  .hero-text {
+    font-size: 1rem;
+  }
+}
+.case-study {
+  border-left: 5px solid var(--secondary);
+  background: var(--bg);
+  padding: 20px;
+  margin-top: 20px;
+}
+.case-study h4 { color: var(--primary); margin-top: 15px; }
+.case-study ol, .case-study ul { margin-left: 20px; }
+.case-study img { max-width: 100%; margin-top: 15px; }
+.skills-list {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
+  margin-top: 8px;
+}
+.skills-list li {
+  background: var(--secondary);
+  color: white;
+  padding: 8px 12px;
+  border-radius: 20px;
+  font-size: 0.95rem;
+}
